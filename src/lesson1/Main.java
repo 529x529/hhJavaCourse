@@ -27,7 +27,7 @@ public class Main {
         System.out.println(Arrays.toString(firstArray));
         System.out.println(Arrays.toString(secondArray));
 
-        System.out.println(createArrays(firstArray, secondArray));
+        createArrays(firstArray, secondArray);
     }
 
     // --------- Task 1 ----------
@@ -75,7 +75,7 @@ public class Main {
         int veightCount = 0;
         int personCount = 0;
 
-        while (maxPersonLimit > personCount) {
+        while (maxPersonLimit > personCount && maxVeight > veightCount) {
             System.out.println("Вес человека: ");
             Scanner scanner = new Scanner(System.in);
             int personVeight = scanner.nextInt();
@@ -96,8 +96,7 @@ public class Main {
     }
 
     // --------- Task 4 ----------
-    public static ArrayList<Integer> createArrays (int[] firstArray, int [] secondArray) {
-        ArrayList<Integer> result = new ArrayList<>();
+    public static void createArrays (int[] firstArray, int [] secondArray) {
         for (int i : firstArray) {
             boolean contains = false;
             for (int j : secondArray) {
@@ -107,9 +106,9 @@ public class Main {
                 }
             }
             if (!contains) {
-                result.add(i);
+                System.out.println(i);
             }
         }
-        return result;
+        System.out.println();
     }
 }
