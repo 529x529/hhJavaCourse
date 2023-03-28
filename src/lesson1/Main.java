@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 public class Main {
     public static void main(String[] args) {
         System.out.println("--------- Task 1 ----------");
-        System.out.println(changeInputNumber());
+        changeInputNumber();
         System.out.println("--------- Task 2 ----------");
         numberChecker();
         System.out.println("--------- Task 3 ----------");
@@ -31,24 +31,21 @@ public class Main {
     }
 
     // --------- Task 1 ----------
-    public static String changeInputNumber() {
+    public static void changeInputNumber() {
         System.out.println("Введи целое трехзначное положительное число: ");
         Scanner scanner = new Scanner(System.in);
-        String number = scanner.nextLine();
+        int number = scanner.nextInt();
 
-        if (number.length() != 3 || number.charAt(0) == '-')
-            throw new IllegalArgumentException("Введи целое трехзначное положительное число");
+        int first = number / 100;
+        int middle = (number / 10) % 10;
+        int last = number % 10;
 
-        if (Integer.parseInt(number) > 500) {
-            return new StringBuilder(number)
-                    .reverse()
-                    .toString();
+        if (number > 500 && number < 1000) {
+            int newNumber = last * 100 + middle * 10 + first;
+            System.out.println(newNumber);
         } else {
-            char[] numberArray = number.toCharArray();
-            char temp = numberArray[1];
-            numberArray[1] = numberArray[2];
-            numberArray[2] = temp;
-            return new String(numberArray);
+            int newNumber = first * 100 + last * 10 + middle;
+            System.out.println(newNumber);
         }
     }
 
