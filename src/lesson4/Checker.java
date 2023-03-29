@@ -13,7 +13,7 @@ public class Checker {
             if (login.length() > 20) {
                 throw new WrongLoginException();
             }
-            if (!password.matches("^[A-Za-z0-9_ ]+$")) {
+            if (!password.matches("^[A-Za-z0-9_]+$")) {
                 throw new WrongPasswordException("Некорректный пароль");
             }
             if (password.length() > 20) {
