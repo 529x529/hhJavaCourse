@@ -43,11 +43,11 @@ class Warrior extends AbstractPersonage implements RageLimit{
     }
 
     public void ultimateRage() {
-        int manaCost = 3;
-        while(manaCost > 0) {
+        int ultimateRageTime = 3;
+        while(ultimateRageTime > 0) {
             System.out.println("Ultimate RAGE!!");
             decreasedRage();
-            manaCost--;
+            ultimateRageTime--;
         }
     }
 }
