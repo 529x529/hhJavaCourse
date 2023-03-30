@@ -13,7 +13,7 @@ public class Task_1 {
         System.out.println("Введите значение радиуса r: ");
         int r = scanner.nextInt();
 
-        var hypotenuse = (Math.pow(x, 2) + Math.pow(y, 2));
+        double hypotenuse = (Math.pow(x, 2) + Math.pow(y, 2));
 
         if (hypotenuse <= r) {
             System.out.println("Точка принадлежит кругу");
