@@ -1,15 +1,12 @@
 package lesson3;
 
-class Warrior extends AbstractPersonage implements RageLimit{
-
+class Warrior extends AbstractPersonage implements RageLimit {
     public int rage;
-
     public static String race = "Human";
-
     private int fatigue = 0;
 
-    public Warrior(String nickName, int level, int rage) {
-        super(nickName, level);
+    public Warrior(String nickName, int level, int rage, int health) {
+        super(nickName, level, health);
         this.rage = rage;
 
     }
@@ -20,7 +17,7 @@ class Warrior extends AbstractPersonage implements RageLimit{
 
     @Override
     public void display() {
-        System.out.println("Personage name: " + getNickName() + ", race: " + race + ", his class: Warrior");
+        System.out.println("Personage name: " + getNickName() + ", race: " + race + ", his class: Warrior.");
 
     }
 
