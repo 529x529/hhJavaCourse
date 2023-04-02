@@ -79,21 +79,20 @@ public class Main {
             personCount = personCount + 1;
             veightCount += personVeight;
             if (veightCount > maxVeight) {
-                System.out.println("Количество людей, вошедших в лифт: " + personCount);
-                System.out.println("Общий их вес: " + veightCount);
                 System.out.println("Превышен лимит, лимит не более 450 кг");
                 break;
             } else if (personCount == maxPersonLimit) {
-                System.out.println("Количество людей, вошедших в лифт: " + personCount);
-                System.out.println("Общий их вес: " + veightCount);
                 System.out.println("Превышен лимит, лимит не более 6 человек");
                 break;
             }
         }
+        System.out.println("Количество людей, вошедших в лифт: " + personCount);
+        System.out.println("Общий их вес: " + veightCount);
     }
 
     // --------- Task 4 ----------
     public static void createArrays (int[] firstArray, int [] secondArray) {
+        int [] result;
         for (int i : firstArray) {
             boolean contains = false;
             for (int j : secondArray) {
@@ -103,9 +102,9 @@ public class Main {
                 }
             }
             if (!contains) {
-                System.out.println(i);
+                result = new int[]{i};
+                System.out.println(Arrays.toString(result));
             }
         }
-        System.out.println();
     }
 }
