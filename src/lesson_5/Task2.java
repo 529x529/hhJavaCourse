@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class Task2 {
 
-    @FunctionalInterface
-    public interface MyInterface {
-        boolean getResult(int number);
-    }
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);

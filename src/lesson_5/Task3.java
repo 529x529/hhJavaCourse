@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class Task3 {
 
-    @FunctionalInterface
-    public interface MyFunctionalInterface {
-        double result(double a, double b, double c);
-    }
     public static void main(String[] args) {
 
         MyFunctionalInterface discriminant = (a, b, c) -> Math.pow(b,2) - (4 * a * c);
