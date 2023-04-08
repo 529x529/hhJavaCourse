@@ -2,14 +2,15 @@ package lesson6;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class Student {
     private String name;
     private String group;
     private int course;
-    private List<Integer> grades;
+    private Map<String, Integer> grades;
 
-    public Student(String name, String group, int course, List<Integer> grades) {
+    public Student(String name, String group, int course, Map<String, Integer> grades) {
         this.name = name;
         this.group = group;
         this.course = course;
@@ -28,16 +29,15 @@ public class Student {
         return course;
     }
 
-    public List<Integer> getGrades() {
+    public Map<String, Integer> getGrades() {
         return grades;
     }
 
     public double getAverageGrade() {
-        double gradeSum = 0.0;
-        for (int grade : grades) {
-            gradeSum += grade;
-        }
-        return gradeSum / grades.size();
+        return grades.values().stream()
+                .mapToDouble(i -> i)
+                .average()
+                .orElse(0);
     }
 
     public static void printStudents(List<Student> students, int course) {
