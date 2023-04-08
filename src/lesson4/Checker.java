@@ -1,23 +1,28 @@
 package lesson4;
 
+import java.util.Scanner;
+
 public class Checker {
     public static void main(String[] args) {
-        System.out.println(checkLoginAndPassword("m21212121_", "123456_", "123456_"));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите логин: ");
+        String login = scanner.nextLine();
+        System.out.println("Введите пароль: ");
+        String password = scanner.nextLine();
+        System.out.println("Введите пароль ещё раз: ");
+        String confirmPassword = scanner.nextLine();
+        System.out.println(checkLoginAndPassword(login, password, confirmPassword));
     }
 
     public static boolean checkLoginAndPassword(String login, String password, String confirmPassword) {
+        final String REGEX = "^[A-Za-z0-9_]{1,20}+$";
+
         try {
-            if (!login.matches("^[A-Za-z0-9_]+$")) {
+            if (!login.matches(REGEX)) {
                 throw new WrongLoginException();
             }
-            if (login.length() > 20) {
-                throw new WrongLoginException();
-            }
-            if (!password.matches("^[A-Za-z0-9_]+$")) {
-                throw new WrongPasswordException("Некорректный пароль");
-            }
-            if (password.length() > 20) {
-                throw new WrongPasswordException("Пароль содержит больше 20 символов");
+            if (!password.matches(REGEX)) {
+                throw new WrongPasswordException("Некорректный пароль или пароль содержит больше 20 символов");
             }
             if (!password.equals(confirmPassword)) {
                 throw new WrongPasswordException("Пароли не совпадают");
@@ -29,7 +34,6 @@ public class Checker {
             System.out.println(e.getMessage());
             return false;
         }
-
         return true;
     }
 }
