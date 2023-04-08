@@ -13,8 +13,12 @@ public class Task_1 {
         System.out.println("Введите значение радиуса r: ");
         int r = scanner.nextInt();
 
-        double hypotenuse = (Math.pow(x, 2) + Math.pow(y, 2));
+        dotInTheCircle(x,y,r);
 
+    }
+
+    public static void dotInTheCircle(int x, int y, int r) {
+        double hypotenuse = (Math.pow(x, 2) + Math.pow(y, 2));
         if (hypotenuse <= r) {
             System.out.println("Точка принадлежит кругу");
         } else {
