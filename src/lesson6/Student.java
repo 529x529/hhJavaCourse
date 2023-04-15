@@ -47,11 +47,13 @@ public class Student {
                 .forEach(student -> System.out.println(student.getName()));
     }
 
-    public static void removeStudentsWithLowGrades() {
-        Iterator<Student> it = DataList.getStudents().iterator();
+    public static void removeStudentsWithLowGrades(List<Student> students) {
+        Iterator<Student> it = students.iterator();
         while (it.hasNext()) {
             Student student = it.next();
-            if (student.getAverageGrade() < 3.0) {
+            if (student.getAverageGrade() == 0.0) {
+                return;
+            } else if (student.getAverageGrade() < 3.0) {
                 it.remove();
                 System.out.println("Студент: " + student.getName() + " отчислен. Средний балл: " + student.getAverageGrade());
             } else if (student.getAverageGrade() >= 3){
