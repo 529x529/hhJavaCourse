@@ -1,20 +1,16 @@
 package lesson3;
 
 class Mage extends AbstractPersonage implements SpellCasting {
-
     public int mana;
-
     public static String race = "Elf";
-
-    public Mage(String nickName, int level, int mana) {
-        super(nickName, level);
+    public Mage(String nickName, int level, int mana, int health) {
+        super(nickName, level, health);
         this.mana = mana;
     }
 
     public int getMana() {
         return mana;
     }
-
 
     @Override
     public void display() {
@@ -43,3 +39,4 @@ class Mage extends AbstractPersonage implements SpellCasting {
         System.out.println("Casting spell - shield");
     }
 }
+
