@@ -1,0 +1,9 @@
+package lesson6;
+
+public class EngStudentBuilder extends StudentBuilder {
+    private String lang;
+    public StudentBuilder withLang() {
+        this.lang = lang;
+        return this;
+    }
+}
