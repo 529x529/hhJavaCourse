@@ -1,4 +1,4 @@
-package lesson_5;
+package lesson5;
 
 @FunctionalInterface
 public interface MyInterface {
